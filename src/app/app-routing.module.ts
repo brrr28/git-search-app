@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { BlocksComponent } from './components/blocks/blocks.component';
+import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
   {
+    path: 'blocks',
+    component: BlocksComponent
+  },
+  {
+    path: 'table',
+    component: TableComponent
+  },
+  {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'blocks',
   }
 ]
 
