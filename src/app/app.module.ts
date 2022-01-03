@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { BlocksComponent } from './components/blocks/blocks.component';
+import { TableComponent } from './components/table/table.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    BlocksComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
