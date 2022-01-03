@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { BlocksComponent } from './components/blocks/blocks.component';
 import { TableComponent } from './components/table/table.component';
+import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TableComponent } from './components/table/table.component';
     AppComponent,
     NavBarComponent,
     BlocksComponent,
-    TableComponent
+    TableComponent,
+    SearchPanelComponent
   ],
   imports: [
     BrowserModule,
