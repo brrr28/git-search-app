@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { BlocksComponent } from './components/blocks/blocks.component';
 import { TableComponent } from './components/table/table.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { SearchPanelComponent } from './components/search-panel/search-panel.com
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

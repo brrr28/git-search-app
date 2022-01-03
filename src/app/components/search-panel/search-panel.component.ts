@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPanelComponent implements OnInit {
 
+  search!: string;
+
   constructor() { }
 
   ngOnInit(): void {
