@@ -8,9 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { BlocksComponent } from './components/blocks/blocks.component';
 import { TableComponent } from './components/table/table.component';
-import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule }   from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     BlocksComponent,
     TableComponent,
-    SearchPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
