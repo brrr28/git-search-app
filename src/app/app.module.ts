@@ -11,6 +11,7 @@ import { TableComponent } from './components/table/table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }   from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
