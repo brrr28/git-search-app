@@ -37,6 +37,7 @@ export class BlocksComponent implements OnInit {
 
   getUser(): void {
     if(!this.search) {
+      this.userSingle = null;
       this.getUsers()
     } else {
       this.user.getUser(this.search)

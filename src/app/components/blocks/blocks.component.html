@@ -9,7 +9,7 @@
             <p>{{userSingle.login}}</p>
             <p>{{userSingle.id}}</p>
         </div>
-    <mat-grid-list cols="5" *ngIf="data">
+    <mat-grid-list cols="5" *ngIf="data && !message">
         <mat-grid-tile *ngFor="let item of data">
             <div class="user-cards">
                 <img width="50%"src={{item?.avatar_url}}>
@@ -19,7 +19,7 @@
         </mat-grid-tile>
     </mat-grid-list>
     <div>
-        <p *ngIf="!data && message !== ''">User{{message}}</p>
+        <p *ngIf="message !== ''">User{{message}}</p>
     </div>
 
 </div>
