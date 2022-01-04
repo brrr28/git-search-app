@@ -1,24 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IUser } from '../components/blocks/blocks.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetUserService {
 
-  userData: any;
-  error!: string;
-
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(`https://api.github.com/users?per_page=20`)
+  getUsers(): Observable<any> {
+    return this.http.get<any>(`https://api.github.com/users?per_page=20`)
   }
 
-  getUser(search: string): Observable<IUser> {
-    return this.http.get<IUser>(`https://api.github.com/users/${search}`)
+  getUser(search: string): Observable<any> {
+    return this.http.get<any>(`https://api.github.com/search/users?q=${search}&per_page=20`)
   }
 
 }

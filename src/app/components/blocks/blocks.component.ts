@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetUserService } from 'src/app/services/get-user.service';
 
-export interface IUser {
-  login: string;
-  avatar_url: string;
-  id: number;
-}
-
 @Component({
   selector: 'app-blocks',
   templateUrl: './blocks.component.html',
@@ -14,10 +8,11 @@ export interface IUser {
 })
 export class BlocksComponent implements OnInit {
 
-  data!: IUser[];
+  data!: any;
   userSingle!: any;
   search!: string;
   message!: string;
+  howUsers!: number; 
 
   constructor(private user: GetUserService) { }
 
@@ -27,9 +22,10 @@ export class BlocksComponent implements OnInit {
 
   getUsers(): void {
     this.user.getUsers()
-    .subscribe((data: IUser[]) => {
+    .subscribe((data: any) => {
       this.data = data;
       this.message = '';
+      this.howUsers = 20;
     },
     error => this.message = error.error.message
     )
@@ -37,13 +33,13 @@ export class BlocksComponent implements OnInit {
 
   getUser(): void {
     if(!this.search) {
-      this.userSingle = null;
       this.getUsers()
     } else {
       this.user.getUser(this.search)
       .subscribe(data => {
-        this.data = [];
-        this.userSingle = data;
+        this.howUsers = data.total_count;
+        console.log(this.howUsers)
+        this.data = data.items;
         this.message = '';
       },
       error => this.message = error.error.message

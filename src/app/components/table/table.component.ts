@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GetUserService } from 'src/app/services/get-user.service';
-import { IUser } from '../blocks/blocks.component';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +8,7 @@ import { IUser } from '../blocks/blocks.component';
 })
 export class TableComponent implements OnInit {
 
-  data!: IUser[];
+  data!: any;
   search!: string;
   message!: string;
   displayedColumns: string[] = ['avatar', 'id', 'login'];
@@ -22,7 +21,7 @@ export class TableComponent implements OnInit {
 
   getUsers(): void {
     this.user.getUsers()
-    .subscribe((data: IUser[]) => {
+    .subscribe((data: any) => {
       this.data = data;
       this.message = '';
     },
@@ -36,8 +35,7 @@ export class TableComponent implements OnInit {
     } else {
       this.user.getUser(this.search)
       .subscribe(data => {
-        this.data = [data];
-        console.log(data)
+        this.data = data.items;
         this.message = '';
       },
       error => this.message = error.error.message
