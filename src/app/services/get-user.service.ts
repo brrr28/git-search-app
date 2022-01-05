@@ -13,8 +13,12 @@ export class GetUserService {
     return this.http.get<any>(`https://api.github.com/users?per_page=20`)
   }
 
-  getUser(search: string): Observable<any> {
+  fingUsersMatch(search: string): Observable<any> {
     return this.http.get<any>(`https://api.github.com/search/users?q=${search}&per_page=20`)
+  }
+
+  getUser(login: string) {
+    return this.http.get<any>(`https://api.github.com/users/${login}`)
   }
 
 }

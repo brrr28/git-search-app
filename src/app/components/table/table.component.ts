@@ -33,7 +33,7 @@ export class TableComponent implements OnInit {
     if(!this.search) {
       this.getUsers()
     } else {
-      this.user.getUser(this.search)
+      this.user.fingUsersMatch(this.search)
       .subscribe(data => {
         this.data = data.items;
         this.message = '';

@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }   from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
     NavBarComponent,
     BlocksComponent,
     TableComponent,
+    UserCardComponent,
   ],
   imports: [
     BrowserModule,

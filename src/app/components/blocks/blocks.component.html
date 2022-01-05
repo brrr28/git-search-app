@@ -3,7 +3,7 @@
     <div class="search">
         <div class="search-elements">
             <input [(ngModel)]="search" matInput placeholder="What you search?">
-            <button (click)="getUser()" mat-button>Search!</button>
+            <button (click)="findUsersMatch()" mat-button>Search!</button>
         </div>
         <p *ngIf="howUsers">{{howUsers}} users was found</p>
     </div>
@@ -12,7 +12,7 @@
     </div>
     <mat-grid-list cols="5" *ngIf="data && message === ''">
         <mat-grid-tile *ngFor="let item of data">
-            <div class="user-cards">
+            <div class="user-cards" [routerLink]="['/blocks', item.login]">
                 <img width="50%"src={{item?.avatar_url}}>
                 <p>Login: {{item?.login}}</p>
                 <p>Id: {{item?.id}}</p>
