@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 @Component({
   selector: 'app-auth',
@@ -8,9 +9,20 @@ import { Component } from '@angular/core';
 export class AuthComponent {
   constructor() {
   }
-  // login() {
-  //   this.auth.signInWithEmailAndPassword('hello@da.com', '123456')
-  // }
+  login() {
+    const auth = getAuth()
+    createUserWithEmailAndPassword(auth, 'pavel@gmail.com', '123456')
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(userCredential)
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+  }
   logout() {
     console.log('Hello')
   }
