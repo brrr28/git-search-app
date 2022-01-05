@@ -9,7 +9,6 @@ import { GetUserService } from 'src/app/services/get-user.service';
 export class BlocksComponent implements OnInit {
 
   data!: any;
-  userSingle!: any;
   search!: string;
   message!: string;
   howUsers!: number; 
@@ -31,11 +30,11 @@ export class BlocksComponent implements OnInit {
     )
   }
 
-  getUser(): void {
+  findUsersMatch(): void {
     if(!this.search) {
       this.getUsers()
     } else {
-      this.user.getUser(this.search)
+      this.user.fingUsersMatch(this.search)
       .subscribe(data => {
         this.howUsers = data.total_count;
         console.log(this.howUsers)
